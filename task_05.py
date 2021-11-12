@@ -9,14 +9,17 @@ from datetime import datetime, timedelta
 def date_in_future(day_offset):
 
     now = datetime.now()
-    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+    dt_string = now.strftime("%d-%m-%Y %H:%M:%S")
 
-    if day_offset:
+    if day_offset and isinstance(day_offset, int):
         future = datetime.now() + timedelta(days = day_offset)
-        dt_string_f = future.strftime("%d/%m/%Y %H:%M:%S")
-        print(f"After {day_offset} days: {dt_string_f}")
+        dt_string_f = future.strftime("%d-%m-%Y %H:%M:%S")
+        return (dt_string_f)
     else:
-        print(f"Current Date: {dt_string}")
+        return (dt_string)
 
-date_in_future([]) # => текущая дата
-date_in_future(2) # => текущая дата + 2 дня
+# print(date_in_future([])) # => текущая дата
+# print(date_in_future([],))
+# print(date_in_future(2))# => текущая дата + 2 дня
+# print(date_in_future(2,))
+# print(date_in_future(6.4))
