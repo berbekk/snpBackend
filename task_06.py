@@ -17,14 +17,14 @@ def rps_game_winner (players):
         return f"{players[0][0]} {players[0][1]}"
 
     if len(players) >= 3:
-       return "WrongNumberOfPlayersError"
+       raise Exception("WrongNumberOfPlayersError")
 
     
     win_postions = {'RS': 'R', 'SR': 'R', 'PS': 'S', 'SP': 'S', 'PR': 'P', 'RP': 'P'}
     winner = players[0][1] + players[1][1]
 
     if winner not in win_postions:
-        return "NoSuchStrategyError"
+        raise Exception("NoSuchStrategyError")
     else:
         winner = win_postions[winner]
 
@@ -32,8 +32,8 @@ def rps_game_winner (players):
         if player[1] == winner:
             return f"{player[0]} {player[1]}"
         
-print (rps_game_winner ([['player1', 'P'], ['player2','S'], ['player3', 'S']]))
-print (rps_game_winner ([['player1', 'P'], ['player2','A']]))
-print (rps_game_winner ([['player1', 'P'], ['player2','S']]))
-print (rps_game_winner ([['player1', 'S'], ['player2','P']]))
-print (rps_game_winner ([['player1', 'P'], ['player2','P']]))
+# print (rps_game_winner ([['player1', 'P'], ['player2','S'], ['player3', 'S']]))
+# print (rps_game_winner ([['player1', 'P'], ['player2','A']]))
+# print (rps_game_winner ([['player1', 'P'], ['player2','S']]))
+# print (rps_game_winner ([['player1', 'S'], ['player2','P']]))
+# print (rps_game_winner ([['player1', 'P'], ['player2','P']]))
