@@ -23,9 +23,9 @@ class JellyBean (Dessert):
         else:
             return True
 
-my = JellyBean("Banan", 400)
-print (my.is_healthy())
-print(my.is_delicious())
+# my = JellyBean("Banan", 400)
+# print (my.is_healthy())
+# print(my.is_delicious())
 
-my.setFlavour("black licorice")
-print(my.is_delicious())
+# my.setFlavour("black licorice")
+# print(my.is_delicious())

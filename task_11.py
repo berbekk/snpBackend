@@ -22,24 +22,24 @@ class Dessert():
         try:
             return self.name
         except AttributeError:
-            print ('Название не задано')
+            raise Exception("Название не задано")
 
     def getCalories(self): 
         try:
             return self.calories
         except AttributeError:
-            print ('Калории не заданы')
+            raise Exception("Калории не заданы")
 
     def is_healthy (self):
         if self.name is not None and isinstance (self.name, str):
             if self.calories is not None and isinstance (self.calories, int):
                 if self.calories < 200:
-                    return f"Десерт с названием: {self.name}({self.calories}ККал) - полезный!"
+                    return True
                 else:
-                    return f"Десерт с названием: {self.name}({self.calories}ККал) - вредный!"
+                    return False
             else:
-                return "Калории должны быть числом"
+                return False
         else:
-            return "Название десерта должно быть строкой"
+            return False
 
     def is_delicious (self): return True
