@@ -31,7 +31,7 @@ class Dessert():
             raise Exception("Калории не заданы")
 
     def is_healthy (self):
-        if isinstance (self.calories, int):
+        if isinstance (self.calories, (int, float)):
             if self.calories < 200:
                 return True
             else:
