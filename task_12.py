@@ -7,18 +7,18 @@ false только в тех случаях, когда flavor равняетс�
 from task_11 import Dessert
 
 class JellyBean (Dessert):
-    def __init__(self, name = None, calories = None, flavour = None):
+    def __init__(self, name = None, calories = None, flavor = None):
         Dessert.__init__(self, name, calories)
-        self.flavour = flavour
+        self.flavor = flavor
 
-    def setFlavour(self, flavour):
-        self.flavour = flavour
+    def setFlavor(self, flavor):
+        self.flavor = flavor
     
-    def getFlavour(self):
-        return self.flavour
+    def getFlavor(self):
+        return self.flavor
 
     def is_delicious(self):
-        if self.flavour == "black licorice":
+        if self.flavor == "black licorice":
             return False
         else:
             return True
